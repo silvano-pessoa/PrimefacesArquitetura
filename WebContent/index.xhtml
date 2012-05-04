@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html 	xmlns="http://www.w3.org/1999/xhtml"
-		xmlns:h="http://java.sun.com/jsf/html"
-		xmlns:f="http://java.sun.com/jsf/core"
-		xmlns:p="http://primefaces.org/ui">
-<h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
-</h:head>
-<h:body>
-	<p:spinner/>
-	<p:colorPicker></p:colorPicker>  
-</h:body>
+
+<!-- TAG LIBRARY -->
+<!-- F - JSF CORE -->
+<!-- H - JSF HTML -->
+<!-- P - PRIMEFACES -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<!-- CABECALHO	 -->
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Login em JSF</title>
+	</h:head>
+	
+	<!-- CORPO -->
+	<h:body>
+		<!-- FORMULARIO -->
+		<h:form>
+			<!-- GERENCIADOR DO LAYOUT COM 2 COLUNAS -->
+			<h:panelGrid columns="2" border="1">
+				
+				<!-- LABEL USUARIO -->
+				<h:outputLabel id="lblUsuario" value="Usuário" for="txtUsuario"/>
+				<!-- INPUT TEXT USUARIO -->
+				<h:inputText id="txtUsuario" value=""/>
+				
+				<!-- LABEL SENHA -->
+				<h:outputLabel id="lblSenha" value="Senha" for="txtSenha"/>
+				<!-- INPUT TEXT SENHA -->
+				<h:inputSecret id="txtSenha"/>
+				
+				<!-- INPUT HIDDEN VERSAO -->
+				<h:inputHidden id="txtVersao" value="1.0.0.1"/>
+				
+				<h:panelGroup/>
+				
+				<!-- BOTAO ACESSAR -->
+				<h:commandButton value="Acessar"/>
+			</h:panelGrid>
+		</h:form>
+	</h:body>
+
 </html>
