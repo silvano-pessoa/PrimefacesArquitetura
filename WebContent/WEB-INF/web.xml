@@ -22,5 +22,7 @@
 		<description>Remove os comentarios do jsf</description>
 		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
 		<param-value>true</param-value>
-	</context-param> 
+	</context-param>
+	<!-- Adiciona Suporte ao cluster -->
+	<distributable/>
 </web-app>
