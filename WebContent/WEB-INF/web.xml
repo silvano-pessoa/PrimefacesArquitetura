@@ -22,12 +22,21 @@
 	</servlet-mapping>
 	
 	
+	<!-- ************************************************************ -->
+	<!-- ************* PARAMETROS DE CONFIGURACAO DO JSF ************ -->
+	<!-- ************************************************************ -->
+	<!-- REMOVE COMENTARIOS DO JSF -->
 	<context-param>
-		<description>Remove os comentarios do jsf</description>
+		<description>Se for true, o ambiente de execução não permitira que os comentarios XML 
+			na pagina do Facelets sejam enviados para o cliente.</description>
 		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
 		<param-value>true</param-value>
 	</context-param>
 	
-	<!-- Suporte ao cluster -->
+	<!-- ************************************************************ -->
+	<!-- ******************* CLUSTER COM GLASSFISH ****************** -->
+	<!-- ************************************************************ -->
+	<!-- Habilita Suporte ao Cluster com Glassfish-->
 	<distributable />
+	
 </web-app>
