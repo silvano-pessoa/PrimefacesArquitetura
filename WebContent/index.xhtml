@@ -25,50 +25,70 @@
 			<!-- TODAS MENSAGENS DA PAGINA -->
 			<h:messages/>
 			
-			<!-- GERENCIADOR DO LAYOUT COM 3 COLUNAS -->
-			<h:panelGrid columns="3" border="0">
+			<fieldset>
+				<legend>Autenticação de Usuário</legend>
 				
-				<!-- LABEL USUARIO (USADO PARA ASSOCIAR O TEXTO A UM OUTRO COMPONENTE) -->
-				<h:outputLabel id="lblUsuario" value="Usuário" for="txtUsuario"/>
-				<!-- INPUT TEXT USUARIO -->
-				<h:inputText id="txtUsuario" value="" required="true" requiredMessage="Campo usuário obrigatório.">
-					<f:validateLength for="txtUsuario" minimum="5" maximum="10"/>
-				</h:inputText>
-				<!-- MESSAGE USUARIO -->
-				<h:message for="txtUsuario" style="color:red"/>
-				
-				<!--LABEL SENHA-->
-				<h:outputLabel id="lblSenha" value="Senha" for="txtSenha" />
-				<!--INPUT TEXT SENHA-->
-				<h:inputSecret id="txtSenha" maxlength="5" required="true" requiredMessage="Campo senha obrigatório."/>
-				<!-- MESSAGE SENHA -->
-				<h:message for="txtSenha" style="color:red"/>
-				
-				<!--INPUT TEXT SALVAR INFORMACOES-->
-				<h:outputLabel value="Salvar Informações" for="chkSalvarInformacoes"/>
-				<!--CHECKBOX SALVAR INFORMACOES-->
-				<h:selectBooleanCheckbox id="chkSalvarInformacoes"/>
-				<!-- INPUT HIDDEN VERSAO -->
-				<h:inputHidden id="txtVersao" value="1.0.0.1"/>
-				
-				<h:panelGroup/>
-				
-				<!-- BOTAO ACESSAR -->
-				<h:commandButton value="Acessar"/>
-				
-				<br/>
-				
-				<!-- LINK QUE REDIRECIONA -->
-				<h:outputLink value="pages/autenticacao/esqueceuSenha.jsf">
-					<!-- LABEL QUE EXIBE TEXTO EM UMA UNICA LINHA E NAO PODE ASSOCIAR AO UM OUTRO COMPONENTE -->
-					<h:outputText value="Esqueceu a senha?"/>
-				</h:outputLink>
-				
-				<!-- LINK QUE SUBMETE USADO EM FORMULARIO -->
-				<!-- <h:commandLink value="Esqueceu a senha?"/> -->
-				
-			</h:panelGrid>
-
+				<!-- GERENCIADOR DO LAYOUT COM 3 COLUNAS -->
+				<h:panelGrid columns="3" border="0">
+					
+					<!-- LABEL USUARIO (USADO PARA ASSOCIAR O TEXTO A UM OUTRO COMPONENTE) -->
+					<h:outputLabel id="lblUsuario" value="Usuário" for="txtUsuario"/>
+					<!-- INPUT TEXT USUARIO -->
+					<h:inputText id="txtUsuario" value="" required="true" requiredMessage="Campo obrigatório.">
+						<f:validateLength for="txtUsuario" minimum="5" maximum="10"/>
+					</h:inputText>
+					<!-- MESSAGE USUARIO -->
+					<h:message for="txtUsuario" style="color:red"/>
+					
+					<!--LABEL SENHA-->
+					<h:outputLabel id="lblSenha" value="Senha" for="txtSenha" />
+					<!--INPUT TEXT SENHA-->
+					<h:inputSecret id="txtSenha" maxlength="5" required="true" requiredMessage="Campo obrigatório."/>
+					<!-- MESSAGE SENHA -->
+					<h:message for="txtSenha" style="color:red"/>
+					
+					<!--LABEL SALVAR INFORMACOES-->
+					<h:outputLabel value="Salvar Informações" for="chkSalvarInformacoes"/>
+					<!--CHECKBOX SALVAR INFORMACOES-->
+					<h:selectBooleanCheckbox id="chkSalvarInformacoes"/>
+					<!-- MESSAGE SALVAR -->
+					<h:message for="chkSalvarInformacoes" style="color:red"/>
+					
+					<!--LABEL IDIOMA-->
+					<h:outputLabel value="Idioma" for="chkSalvarInformacoes"/>
+					<!--GRUPO IDIOMA-->
+					<h:panelGroup id="pnlgI18n">
+						<!-- JSF 2.0, renderizando uma imagem atravês do conceito 'resource library' -->
+						<h:outputLink value="">
+							<h:graphicImage library="img" name="brasil-icone.png" width="16" height="16" alt="Português - Brasil"/>
+						</h:outputLink>
+						<!-- <h:graphicImage url="resources/img/brasil-icone.png" width="16" height="16" alt="Português - Brasil"/> -->
+						<h:outputLink value="">
+							<h:graphicImage url="resources/img/united%20states.png" width="16" height="16" alt="Inglês - USA"/>
+						</h:outputLink>
+					</h:panelGroup>
+					<!-- MESSAGE IDIOMA -->
+					<h:message for="pnlgI18n" style="color:red"/>
+					
+					<!-- INPUT HIDDEN VERSAO -->
+					<h:inputHidden id="txtVersao" value="1.0.0.1"/>
+					
+					<!-- BUTTON ACESSAR -->
+					<h:commandButton value="Acessar"/>
+					
+					<br/>
+					
+					<!-- LINK QUE REDIRECIONA -->
+					<h:outputLink value="pages/autenticacao/esqueceuSenha.jsf">
+						<!-- LABEL QUE EXIBE TEXTO EM UMA UNICA LINHA E NAO PODE ASSOCIAR AO UM OUTRO COMPONENTE -->
+						<h:outputText value="Esqueceu a senha?"/>
+					</h:outputLink>
+					
+					<!-- LINK QUE SUBMETE USADO EM FORMULARIO -->
+					<!-- <h:commandLink value="Esqueceu a senha?"/> -->
+					
+				</h:panelGrid>
+			</fieldset>
 			
 			
 		</h:form>

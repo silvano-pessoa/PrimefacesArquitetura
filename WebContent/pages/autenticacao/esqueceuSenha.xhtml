@@ -13,6 +13,22 @@
 	<!-- CABECALHO	 -->
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-		<title>Formulario de Cadastro de Login</title>
+		<title>Envio de E-Mail com senha</title>
 	</h:head>
+	
+	<body>
+		<h:form>
+			<fieldset>
+				<legend>Envio da Senha</legend>
+				<h:panelGrid columns="2">
+					<!--LABEL SENHA-->
+					<h:outputLabel id="lblSenha" value="E-Mail" for="txtEmail" />
+					<h:inputText id="txtEmail" required="true"/>
+					<h:commandButton value="Enviar"/>
+				</h:panelGrid>
+			</fieldset>
+		</h:form>
+	
+	</body>
+	
 </html>
