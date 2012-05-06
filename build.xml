@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Glassfish ANT" default="deploy" basedir=".">
+	
+	<description>
+	Exemplo de arquivo de scripts para o ANT que realiza o
+	empacotamento e deploy de um aplicativo web.
+	</description>
+	
+	<!-- <property file="build.properties"/>-->
+	
+	<property name="app.name" value="XXX"/>
+	<property name="glassfish.home" value="C:\Users\nogard\Desktop\GlassFish\glassfish3"/>
+<!-- 	<property name="deploy.home" value="${glassfish.home}/webapps"/> -->
+	<property name="deploy.home" value="C:\Users\nogard\Desktop\"/>
+	<property name="src.dir" value="/src"/>
+	<property name="classes.dir" value="/WebContent/WEB-INF/classes"/>
+<!-- 	<property name="jars.dir" value="/java/dist"/> -->
+	<property name="jars.dir" value="/WebContent/WEB-INF/lib"/>
+	<property name="web.dir" value="/WebContent/WEB-INF/web.xml"/>
+	
+	<!-- ****************************************************************** -->
+	<!-- ************************ JARS COMPILAÇÃO ************************* -->
+	<!-- ****************************************************************** -->
+	<echo>INFO: Setando localização dos Jars de Compilação</echo>
+	<path id="web.classpath">
+		<fileset dir="${glassfish.home}/glassfish/lib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	
+	<!-- ****************************************************************** -->
+	<!-- ************************ CRIAR DIRETORIOS ************************ -->
+	<!-- ****************************************************************** -->
+	<target name="preparar">
+		<mkdir dir=".${classes.dir}"/>
+		<mkdir dir=".${jars.dir}"/>
+		<echo>INFO: Criando os seguintes diretórios na raiz do Projeto:</echo>
+		<echo>"Diretório 1: ${classes.dir}"</echo>
+		<echo>"Diretório 2: ${jars.dir}"</echo>
+	</target>
+	
+	<!-- ****************************************************************** -->
+	<!-- ************************ COMPILAR PROJETO ************************ -->
+	<!-- ****************************************************************** -->
+	<target name="compilar" 
+		depends="preparar">
+		<javac srcdir=".${src.dir}" destdir=".${classes.dir}"/>
+	</target>
+	
+	<!-- ****************************************************************** -->
+	<!-- ************************* JAR DO PROJETO ************************* -->
+	<!-- ****************************************************************** -->
+	<target name="empacotar" depends="compilar">
+		<war destfile=".${jars.dir}/${app.name}.war" webxml=".${web.dir}">
+			<classes dir=".${classes.dir}"/>
+			<fileset dir="WebContent"/>
+		</war>
+	</target>
+	
+	<!-- ****************************************************************** -->
+	<!-- *********************** DEPLOY SERVIDOR WEB ********************** -->
+	<!-- ****************************************************************** -->
+	<target name="deploy" depends="empacotar">
+		<copy file=".${jars.dir}/${app.name}.war" tofile="${deploy.home}/${app.name}.war"/>
+	</target>
+	
+	<!-- ****************************************************************** -->
+	<!-- *********************** DELETAR DIRETORIOS *********************** -->
+	<!-- ****************************************************************** -->
+<!-- 	<target name="limpeza"> -->
+<!-- 		<delete dir=".${jars.dir}"/> -->
+<!-- 		<delete dir=".${classes.dir}"/> -->
+<!-- 	</target> -->
+	
+	<!-- ****************************************************************** -->
+	<!-- ********************** DELETAR SERVIDOR WEB ********************** -->
+	<!-- ****************************************************************** -->
+<!-- 	<target name="undeploy"> -->
+<!-- 		<delete file="${deploy.home}/${app.name}.war"/> -->
+<!-- 		<echo>${deploy.home}/${app.name}.war</echo> -->
+<!-- 	</target> -->
+	
+</project>
