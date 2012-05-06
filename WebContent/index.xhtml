@@ -34,7 +34,7 @@
 					<!-- LABEL USUARIO (USADO PARA ASSOCIAR O TEXTO A UM OUTRO COMPONENTE) -->
 					<h:outputLabel id="lblUsuario" value="Usuário" for="txtUsuario"/>
 					<!-- INPUT TEXT USUARIO -->
-					<h:inputText id="txtUsuario" value="" required="true" requiredMessage="Campo obrigatório.">
+					<h:inputText id="txtUsuario" value="" required="true" requiredMessage="Campo obrigatório." title="Login do usuário.">
 						<f:validateLength for="txtUsuario" minimum="5" maximum="10"/>
 					</h:inputText>
 					<!-- MESSAGE USUARIO -->
@@ -74,7 +74,7 @@
 					<h:inputHidden id="txtVersao" value="1.0.0.1"/>
 					
 					<!-- BUTTON ACESSAR -->
-					<h:commandButton value="Acessar"/>
+					<h:commandButton value="Acessar" title="AAAAAAAAAA"/>
 					
 					<br/>
 					
