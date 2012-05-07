@@ -9,9 +9,9 @@
 	<!-- <property file="build.properties"/>-->
 	
 	<property name="app.name" value="XXX"/>
-	<property name="glassfish.home" value="C:\Users\nogard\Desktop\GlassFish\glassfish3"/>
+	<property name="glassfish.home" value="C:/Users/nogard/Desktop/GlassFish/glassfish3"/>
 <!-- 	<property name="deploy.home" value="${glassfish.home}/webapps"/> -->
-	<property name="deploy.home" value="C:\Users\nogard\Desktop\"/>
+	<property name="deploy.home" value="${glassfish.home}/glassfish/domains/domain1/autodeploy"/>
 	<property name="src.dir" value="/src"/>
 	<property name="classes.dir" value="/WebContent/WEB-INF/classes"/>
 <!-- 	<property name="jars.dir" value="/java/dist"/> -->
@@ -21,7 +21,6 @@
 	<!-- ****************************************************************** -->
 	<!-- ************************ JARS COMPILAÇÃO ************************* -->
 	<!-- ****************************************************************** -->
-	<echo>INFO: Setando localização dos Jars de Compilação</echo>
 	<path id="web.classpath">
 		<fileset dir="${glassfish.home}/glassfish/lib">
 			<include name="*.jar"/>
@@ -34,21 +33,18 @@
 	<target name="preparar">
 		<mkdir dir=".${classes.dir}"/>
 		<mkdir dir=".${jars.dir}"/>
-		<echo>INFO: Criando os seguintes diretórios na raiz do Projeto:</echo>
-		<echo>"Diretório 1: ${classes.dir}"</echo>
-		<echo>"Diretório 2: ${jars.dir}"</echo>
 	</target>
 	
 	<!-- ****************************************************************** -->
 	<!-- ************************ COMPILAR PROJETO ************************ -->
 	<!-- ****************************************************************** -->
-	<target name="compilar" 
-		depends="preparar">
-		<javac srcdir=".${src.dir}" destdir=".${classes.dir}"/>
+
+	<target name="compilar" depends="preparar">
+		<javac includeantruntime="false" srcdir=".${src.dir}" destdir=".${classes.dir}"/>
 	</target>
 	
 	<!-- ****************************************************************** -->
-	<!-- ************************* JAR DO PROJETO ************************* -->
+	<!-- ************************* WAR DO PROJETO ************************* -->
 	<!-- ****************************************************************** -->
 	<target name="empacotar" depends="compilar">
 		<war destfile=".${jars.dir}/${app.name}.war" webxml=".${web.dir}">
@@ -61,7 +57,7 @@
 	<!-- *********************** DEPLOY SERVIDOR WEB ********************** -->
 	<!-- ****************************************************************** -->
 	<target name="deploy" depends="empacotar">
-		<copy file=".${jars.dir}/${app.name}.war" tofile="${deploy.home}/${app.name}.war"/>
+		<copy file=".${jars.dir}/${app.name}.war" tofile="C:\Users\nogard\Desktop\GlassFish\glassfish3\glassfish\domains\domain1\autodeploy\${app.name}.war"/>
 	</target>
 	
 	<!-- ****************************************************************** -->
