@@ -18,7 +18,7 @@
 	
 	<!-- CORPO -->
 	<h:body>
-				
+		<f:view contentType="text/html">		
 		<!-- FORMULARIO -->
 		<h:form>
 		
@@ -34,7 +34,7 @@
 					<!-- LABEL USUARIO (USADO PARA ASSOCIAR O TEXTO A UM OUTRO COMPONENTE) -->
 					<h:outputLabel id="lblUsuario" value="Usuário" for="txtUsuario"/>
 					<!-- INPUT TEXT USUARIO -->
-					<h:inputText id="txtUsuario" value="" required="true" requiredMessage="Campo obrigatório." title="Login do usuário.">
+					<h:inputText id="txtUsuario" required="true" requiredMessage="Campo obrigatório." title="Login do usuário." value="#{loginController.nome}">
 						<f:validateLength for="txtUsuario" minimum="5" maximum="10"/>
 					</h:inputText>
 					<!-- MESSAGE USUARIO -->
@@ -74,7 +74,7 @@
 					<h:inputHidden id="txtVersao" value="1.0.0.1"/>
 					
 					<!-- BUTTON ACESSAR -->
-					<h:commandButton value="Acessar" title="AAAAAAAAAA"/>
+					<h:commandButton value="Acessar" title="AAAAAAAAAA" actionListener="#{loginController.salvar}"/>
 					
 					<br/>
 					
@@ -92,6 +92,7 @@
 			
 			
 		</h:form>
+		</f:view>
 	</h:body>
 
 </html>

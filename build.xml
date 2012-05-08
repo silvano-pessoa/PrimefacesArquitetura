@@ -63,17 +63,17 @@
 	<!-- ****************************************************************** -->
 	<!-- *********************** DELETAR DIRETORIOS *********************** -->
 	<!-- ****************************************************************** -->
-<!-- 	<target name="limpeza"> -->
-<!-- 		<delete dir=".${jars.dir}"/> -->
-<!-- 		<delete dir=".${classes.dir}"/> -->
-<!-- 	</target> -->
+	<target name="limpeza">
+		<delete dir=".${jars.dir}"/>
+		<delete dir=".${classes.dir}"/>
+	</target>
 	
 	<!-- ****************************************************************** -->
 	<!-- ********************** DELETAR SERVIDOR WEB ********************** -->
 	<!-- ****************************************************************** -->
-<!-- 	<target name="undeploy"> -->
-<!-- 		<delete file="${deploy.home}/${app.name}.war"/> -->
-<!-- 		<echo>${deploy.home}/${app.name}.war</echo> -->
-<!-- 	</target> -->
+	<target name="undeploy">
+		<delete file="${deploy.home}/${app.name}.war"/>
+		<echo>${deploy.home}/${app.name}.war</echo>
+	</target>
 	
 </project>
