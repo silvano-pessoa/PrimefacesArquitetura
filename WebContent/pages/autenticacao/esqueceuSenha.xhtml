@@ -25,19 +25,18 @@
 					<!--LABEL SENHA-->
 					<h:outputLabel id="lblSenha" value="E-Mail" for="txtEmail" />
 					<h:inputText id="txtEmail" required="true" value="#{esqueceuSenhaController.email}"/>
-					<h:commandButton value="Enviar" action="#{esqueceuSenhaController.enviar}"/>
+					<h:commandButton value="Enviar" actionListener="#{esqueceuSenhaController.enviar}"/>
 				</h:panelGrid>
-				    		<p:commandButton value="Count"  
-                actionListener="#{esqueceuSenhaController.increment}" update="txt_count"/>
-				<!-- LINK QUE REDIRECIONA -->
-		<h:outputText value="Counter: " />  
-			<h:panelGrid columns="2" cellpadding="5">  
-      			 <h:outputText id="txt_count" value="#{esqueceuSenhaController.count}" />        
-    		</h:panelGrid>  
+				<p:commandButton value="Count" actionListener="#{esqueceuSenhaController.increment}" update="txt_count"/>
+				<h:outputText value="Counter: " /> 
+				<h:panelGrid columns="2" cellpadding="5">  
+	      			 <h:outputText id="txt_count" value="#{esqueceuSenhaController.count}" />        
+	    		</h:panelGrid>  
 			</fieldset>
   
 
 		</h:form>
+		<!-- LINK QUE REDIRECIONA -->
 		<h:outputLink value="../../index.jsf">
 			<!-- LABEL QUE EXIBE TEXTO EM UMA UNICA LINHA E NAO PODE ASSOCIAR AO UM OUTRO COMPONENTE -->
 			<h:outputText value="voltar"/>
