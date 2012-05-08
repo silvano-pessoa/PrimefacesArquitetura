@@ -48,4 +48,19 @@ public class LoginController implements Serializable {
 	public void salvar(){
 		System.out.println(nome);
 	}
+	
+	private int count;  
+	  
+    public int getCount() {  
+        return count;  
+    }  
+	  
+    public void setCount(int count) {  
+        this.count = count;  
+    }  
+    
+	public void increment() {  
+	        count++;  
+	}  
+
 }

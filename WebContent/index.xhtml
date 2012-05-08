@@ -88,6 +88,13 @@
 					<!-- <h:commandLink value="Esqueceu a senha?"/> -->
 					
 				</h:panelGrid>
+			<h:panelGrid columns="2" cellpadding="5">  
+        		<h:outputText value="Counter: " />  
+       			 <h:outputText id="txt_count" value="#{loginController.count}" />        
+    		</h:panelGrid>  
+  
+    		<p:commandButton value="Count"  
+                actionListener="#{loginController.increment}" update="txt_count"/>
 			</fieldset>
 			
 			
