@@ -27,14 +27,7 @@
 					<h:inputText id="txtEmail" required="true" value="#{esqueceuSenhaController.email}"/>
 					<h:commandButton value="Enviar" actionListener="#{esqueceuSenhaController.enviar}"/>
 				</h:panelGrid>
-				<p:commandButton value="Count" actionListener="#{esqueceuSenhaController.increment}" update="txt_count"/>
-				<h:outputText value="Counter: " /> 
-				<h:panelGrid columns="2" cellpadding="5">  
-	      			 <h:outputText id="txt_count" value="#{esqueceuSenhaController.count}" />        
-	    		</h:panelGrid>  
 			</fieldset>
-  
-
 		</h:form>
 		<!-- LINK QUE REDIRECIONA -->
 		<h:outputLink value="../../index.jsf">

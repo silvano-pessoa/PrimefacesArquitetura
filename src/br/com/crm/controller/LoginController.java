@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.faces.component.UIViewRoot;
 
 import org.springframework.stereotype.Controller;
 
@@ -45,8 +44,11 @@ public class LoginController implements Serializable {
 		this.senha = senha;
 	}
 	
-	public void salvar(){
-		System.out.println(nome);
+	public String salvar(){
+		if(nome.equals("silvano")&& senha.equals("admin")){
+			return "pages/autenticacao/esqueceuSenha.jsf";
+		}
+		return null;
 	}
 	
 	private int count;  

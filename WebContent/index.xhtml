@@ -43,7 +43,7 @@
 					<!--LABEL SENHA-->
 					<h:outputLabel id="lblSenha" value="Senha" for="txtSenha" />
 					<!--INPUT TEXT SENHA-->
-					<h:inputSecret id="txtSenha" maxlength="5" required="true" requiredMessage="Campo obrigatório."/>
+					<h:inputSecret id="txtSenha" maxlength="5" required="true" requiredMessage="Campo obrigatório." value="#{loginController.senha}"/>
 					<!-- MESSAGE SENHA -->
 					<h:message for="txtSenha" style="color:red"/>
 					
@@ -74,7 +74,7 @@
 					<h:inputHidden id="txtVersao" value="1.0.0.1"/>
 					
 					<!-- BUTTON ACESSAR -->
-					<h:commandButton value="Acessar" title="AAAAAAAAAA" actionListener="#{loginController.salvar}"/>
+					<h:commandButton value="Acessar" title="Acessar" action="#{loginController.salvar}"/>
 					
 					<br/>
 					
@@ -88,13 +88,6 @@
 					<!-- <h:commandLink value="Esqueceu a senha?"/> -->
 					
 				</h:panelGrid>
-			<h:panelGrid columns="2" cellpadding="5">  
-        		<h:outputText value="Counter: " />  
-       			 <h:outputText id="txt_count" value="#{loginController.count}" />        
-    		</h:panelGrid>  
-  
-    		<p:commandButton value="Count"  
-                actionListener="#{loginController.increment}" update="txt_count"/>
 			</fieldset>
 			
 			
