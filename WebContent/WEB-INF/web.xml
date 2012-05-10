@@ -21,7 +21,21 @@
 		<url-pattern>*.jsf</url-pattern>
 	</servlet-mapping>
 	
-	
+	<!-- ************************************************************ -->
+ 	<!-- ***************** DATA SOURCE - PRODUCAO *******************-->
+ 	<!-- ************************************************************ -->
+	<!-- DATA SOURCE - PRODUCAO -->
+<!-- 	<resource-ref> -->
+<!-- 		<res-ref-name>hibernate/crmProducao</res-ref-name> -->
+<!-- 		<res-type>javax.sql.DataSource</res-type> -->
+<!-- 		<res-auth>Container</res-auth> -->
+<!-- 		<res-sharing-scope>Shareable</res-sharing-scope> -->
+<!-- 	</resource-ref> -->
+
+	<persistence-unit-ref>
+		<persistence-unit-ref-name>persistence/producao</persistence-unit-ref-name>
+		<persistence-unit-name>intranet</persistence-unit-name>
+	</persistence-unit-ref>
 	<!-- ************************************************************ -->
 	<!-- ************* PARAMETROS DE CONFIGURACAO DO JSF ************ -->
 	<!-- ************************************************************ -->

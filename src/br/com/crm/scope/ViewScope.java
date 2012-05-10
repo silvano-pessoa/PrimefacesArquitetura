@@ -24,6 +24,7 @@ public class ViewScope implements Scope {
 
 	public static final String VIEW_SCOPE_CALLBACKS = "viewScope.callbacks";
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public synchronized Object get(String name, ObjectFactory objectFactory) {
 		Object instance = getViewMap().get(name);

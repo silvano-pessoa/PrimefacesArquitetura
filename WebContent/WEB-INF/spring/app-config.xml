@@ -13,7 +13,17 @@
 	<!-- BEANS CONTROLLER -->
 	<context:component-scan base-package="br.com.crm.controller" />
 	
-		<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+	<!-- BEANS SERVICE -->
+    <context:component-scan base-package="br.com.crm.service.impl"/>
+
+    <!-- BEANS DAO  -->
+    <context:component-scan base-package="br.com.crm.dao.impl"/>
+    
+    <!-- ======================================================================================== -->
+ 	<!-- ================================= ESCOPOS CUSTOMIZADOS ================================= -->
+ 	<!-- ======================================================================================== -->
+    
+	<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
         <property name="scopes">
             <map>
                 <entry key="view">
@@ -22,4 +32,6 @@
             </map>
         </property>
     </bean>
+    
+ 
 </beans>
